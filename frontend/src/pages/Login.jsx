@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useUI } from '../context/UIContext';
 import { useTranslation } from 'react-i18next';
 import api from '../services/api';
 import { Phone, Lock, Eye, EyeOff, ShieldCheck, HelpCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import logoCompact from '../assets/logo_compact.png';
 
 export default function Login() {
   const { showToast } = useUI();
@@ -153,29 +154,36 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-dark-main flex items-center justify-center p-4 transition-colors duration-200">
+    <div className="min-h-screen bg-gradient-to-tr from-emerald-50/40 via-slate-50 to-teal-50/30 dark:from-[#0b0f19] dark:via-[#111726] dark:to-[#0f1524] flex items-center justify-center p-4 transition-colors duration-200 relative overflow-hidden select-none">
+      
+      {/* Decorative organic shapes in background */}
+      <div className="absolute top-[-10%] right-[-10%] w-[35vw] h-[35vw] rounded-full bg-gradient-to-br from-emerald-100/20 to-teal-200/10 blur-3xl -z-10" />
+      <div className="absolute bottom-[-10%] left-[-10%] w-[35vw] h-[35vw] rounded-full bg-gradient-to-tr from-amber-100/10 to-emerald-100/20 blur-3xl -z-10" />
+
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
-        className="max-w-md w-full bg-white dark:bg-dark-surface border border-slate-200 dark:border-dark-border rounded-lg shadow-xl p-8 space-y-6"
+        className="max-w-md w-full bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-slate-200/60 dark:border-slate-700/60 rounded-3xl shadow-xl p-8 space-y-6 relative z-10"
       >
         {/* Branding header */}
         <div className="flex flex-col items-center text-center space-y-2.5">
-          <div className="w-12 h-12 rounded bg-blue-600 flex items-center justify-center text-white font-extrabold text-2xl shadow-sm">
-            A
-          </div>
+          <img 
+            src={logoCompact} 
+            alt="ANR Logo" 
+            className="w-14 h-14 object-contain rounded-2xl shadow-md border border-slate-200 dark:border-slate-800"
+          />
           <div>
-            <h1 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+            <h1 className="text-xl font-black tracking-tight text-slate-900 dark:text-white">
               ANR Dairy Management System
             </h1>
-            <p className="text-xs text-slate-500 dark:text-slate-400">
-              Authenticate to access the milk collection panel
+            <p className="text-xs font-semibold text-slate-400 dark:text-slate-450 mt-0.5">
+              Admin & Staff Portal Sign In
             </p>
           </div>
         </div>
 
         {/* Credentials Form */}
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 text-left">
           
           {/* Phone Input */}
           <div className="space-y-1">
@@ -190,7 +198,7 @@ export default function Login() {
                   required: 'Phone number is required',
                   pattern: { value: /^[6-9]\d{9}$/, message: 'Must be a valid 10-digit number' }
                 })}
-                className="w-full pl-9 pr-4 py-2.5 text-sm bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-dark-border rounded-md text-slate-800 dark:text-slate-100"
+                className="w-full pl-9 pr-4 py-2.5 text-sm bg-slate-50/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-700/80 rounded-xl text-slate-800 dark:text-slate-100 focus:border-emerald-500 focus:ring-emerald-500/20"
                 placeholder="Enter 10-digit mobile"
               />
             </div>
@@ -209,7 +217,7 @@ export default function Login() {
                 <button
                   type="button"
                   onClick={() => setShowForgotModal(true)}
-                  className="text-[11px] font-semibold text-blue-600 hover:text-blue-755 dark:text-blue-400 hover:underline transition"
+                  className="text-[11px] font-bold text-emerald-600 hover:text-emerald-700 dark:text-emerald-400 hover:underline transition"
                 >
                   {t('forgotPassword')}?
                 </button>
@@ -220,7 +228,7 @@ export default function Login() {
               <input
                 type={showPassword ? 'text' : 'password'}
                 {...register('password', { required: 'Password is required' })}
-                className="w-full pl-9 pr-10 py-2.5 text-sm bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-dark-border rounded-md text-slate-800 dark:text-slate-100"
+                className="w-full pl-9 pr-10 py-2.5 text-sm bg-slate-50/50 dark:bg-slate-900/40 border border-slate-200/80 dark:border-slate-700/80 rounded-xl text-slate-800 dark:text-slate-100 focus:border-emerald-500 focus:ring-emerald-500/20"
                 placeholder="••••••"
               />
               <button
@@ -245,10 +253,19 @@ export default function Login() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full flex items-center justify-center gap-2 py-2.5 px-4 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 rounded-md shadow-sm transition"
+            className="w-full flex items-center justify-center gap-2 py-3 px-4 text-sm font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 disabled:from-emerald-400 disabled:to-teal-400 rounded-xl shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/25 transition duration-300"
           >
             {loading ? 'Authenticating...' : t('loginButton')}
           </button>
+
+          <div className="text-center pt-2">
+            <Link
+              to="/portal-select"
+              className="text-xs font-bold text-emerald-650 hover:text-emerald-750 dark:text-emerald-400 dark:hover:text-emerald-300 hover:underline transition"
+            >
+              Back to Portal Selection
+            </Link>
+          </div>
         </form>
       </motion.div>
 

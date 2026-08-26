@@ -90,7 +90,7 @@ export default function Landing() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 flex flex-col font-sans transition-colors duration-300 selection:bg-emerald-600 selection:text-white">
+    <div className="min-h-screen bg-gradient-to-br from-emerald-50/20 via-[#fefdfa] to-teal-50/30 dark:from-[#0b0f19] dark:via-[#0d1222] dark:to-[#0b0f19] text-slate-800 dark:text-slate-100 flex flex-col font-sans transition-colors duration-300 selection:bg-emerald-600 selection:text-white">
       
       {/* Premium Sticky Navigation */}
       <header className="fixed top-0 inset-x-0 h-20 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-800/60 z-50 px-6 md:px-12 flex items-center justify-between transition-colors">
@@ -157,16 +157,10 @@ export default function Landing() {
           </div>
 
           <Link
-            to="/farmer/login"
-            className="px-4 py-2 text-sm font-bold text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition"
-          >
-            {t('landingFarmerPortal')}
-          </Link>
-          <Link
-            to="/admin/login"
+            to="/portal-select"
             className="px-5 py-2.5 text-sm font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 rounded-lg shadow-md shadow-emerald-500/10 transition duration-300 hover:-translate-y-0.5"
           >
-            {t('landingAdminPortal')}
+            Access Portals
           </Link>
         </div>
 
@@ -225,20 +219,13 @@ export default function Landing() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 pt-2">
+            <div className="pt-2">
               <Link
-                to="/farmer/login"
+                to="/portal-select"
                 onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center py-2.5 text-sm font-bold text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-850 rounded-lg hover:bg-slate-200 transition"
+                className="flex items-center justify-center w-full py-2.5 text-sm font-bold text-white bg-emerald-600 rounded-lg hover:bg-emerald-700 shadow-sm transition"
               >
-                {t('landingFarmerPortal')}
-              </Link>
-              <Link
-                to="/admin/login"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center py-2.5 text-sm font-bold text-white bg-emerald-600 rounded-lg hover:bg-emerald-700 shadow-sm"
-              >
-                {t('landingAdminPortal')}
+                Access Portals
               </Link>
             </div>
           </motion.div>
@@ -249,7 +236,9 @@ export default function Landing() {
       <section className="relative pt-36 pb-24 px-6 md:px-12 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center flex-1 overflow-hidden select-none">
         
         {/* Background decorative elements */}
-        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-gradient-to-tr from-emerald-200/20 to-teal-300/20 rounded-full blur-3xl -z-10" />
+        <div className="absolute top-1/4 left-1/3 w-96 h-96 bg-gradient-to-tr from-emerald-200/10 to-teal-300/15 dark:from-emerald-950/5 dark:to-teal-950/5 rounded-full blur-3xl -z-10" />
+        <div className="absolute top-10 left-10 w-44 h-44 rounded-full bg-emerald-500/5 dark:bg-emerald-500/2 blur-2xl -z-10" />
+        <div className="absolute bottom-20 right-10 w-60 h-60 rounded-full bg-amber-500/5 dark:bg-amber-500/2 blur-2xl -z-10" />
         
         {/* Left Side: Brand presentation (Lg: col-span-7) */}
         <motion.div
@@ -274,7 +263,7 @@ export default function Landing() {
           {/* Discover ANR Dairy Button */}
           <div className="flex pt-3">
             <button
-              onClick={() => scrollToSection('about')}
+              onClick={() => navigate('/portal-select')}
               className="group flex items-center justify-center gap-2 px-7 py-3.5 text-sm font-bold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 rounded-xl shadow-lg shadow-emerald-500/10 hover:shadow-emerald-500/25 transition duration-300 hover:-translate-y-0.5"
             >
               <span>Discover ANR Dairy</span>
@@ -835,7 +824,7 @@ export default function Landing() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-24 px-6 md:px-12 w-full bg-gradient-to-r from-emerald-600 to-teal-700 text-white select-none relative overflow-hidden">
+      <section className="py-24 px-6 md:px-12 w-full bg-gradient-to-r from-emerald-600 to-teal-705 text-white select-none relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1.5px,transparent_1.5px)] [background-size:16px_16px]" />
         
         <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
@@ -843,15 +832,6 @@ export default function Landing() {
           <p className="text-base sm:text-lg text-emerald-100 max-w-xl mx-auto leading-relaxed">
             {t('landingCtaSub')}
           </p>
-
-          <div className="flex justify-center pt-2">
-            <button
-              onClick={() => scrollToSection('about')}
-              className="px-8 py-3.5 text-sm font-extrabold text-emerald-700 bg-white hover:bg-slate-50 rounded-xl shadow-lg shadow-black/10 hover:shadow-black/20 hover:-translate-y-0.5 transition"
-            >
-              Discover ANR Dairy
-            </button>
-          </div>
         </div>
       </section>
 

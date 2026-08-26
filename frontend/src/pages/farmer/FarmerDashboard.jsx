@@ -104,7 +104,7 @@ export default function FarmerDashboard() {
         <div className="bg-white dark:bg-dark-surface p-4 rounded-xl border border-slate-200 dark:border-dark-border shadow-sm flex flex-col justify-between">
           <div className="flex justify-between items-start">
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{t('todaysMilk')}</span>
-            <div className="p-1.5 rounded-lg bg-blue-50 dark:bg-blue-955/20 text-blue-600 dark:text-blue-400">
+            <div className="p-1.5 rounded-lg bg-emerald-50 dark:bg-emerald-950/20 text-emerald-600 dark:text-emerald-400">
               <Droplets className="w-4 h-4" />
             </div>
           </div>
@@ -179,7 +179,7 @@ export default function FarmerDashboard() {
         <div className="lg:col-span-2 bg-white dark:bg-dark-surface border border-slate-200 dark:border-dark-border rounded-xl shadow-sm overflow-hidden flex flex-col">
           <div className="p-5 border-b border-slate-150 dark:border-dark-border flex items-center justify-between">
             <h3 className="text-sm font-bold text-slate-800 dark:text-slate-200 flex items-center gap-2">
-              <Calendar className="w-4 h-4 text-blue-500" />
+              <Calendar className="w-4 h-4 text-emerald-600 dark:text-emerald-450" />
               <span>{t('recentDeliveries')}</span>
             </h3>
             <span className="text-[10px] text-slate-400 font-semibold uppercase">Last 5 Deliveries</span>
@@ -237,7 +237,7 @@ export default function FarmerDashboard() {
               recentAlerts.map(alert => (
                 <div key={alert._id} className="p-3 border border-slate-100 dark:border-dark-border bg-slate-50/60 dark:bg-slate-800/10 rounded-lg text-xs space-y-1.5 animate-fadeIn">
                   <div className="flex justify-between items-center text-[10px] font-bold text-slate-455">
-                    <span className="uppercase text-blue-600 font-bold">{alert.type} Alert</span>
+                    <span className="uppercase text-emerald-650 dark:text-emerald-450 font-bold">{alert.type} Alert</span>
                     <span>{formatDate(alert.createdAt)}</span>
                   </div>
                   <p className="text-slate-700 dark:text-slate-300 leading-normal font-medium">{alert.message}</p>

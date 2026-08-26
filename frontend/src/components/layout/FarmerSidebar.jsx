@@ -27,7 +27,7 @@ export default function FarmerSidebar() {
   const navItemClass = ({ isActive }) =>
     `flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md transition duration-150 ${
       isActive
-        ? 'bg-blue-50 dark:bg-blue-955/30 text-blue-600 dark:text-brand-400 border border-blue-100 dark:border-blue-900/30'
+        ? 'bg-emerald-50 dark:bg-emerald-955/20 text-emerald-600 dark:text-emerald-400 border border-emerald-100/50 dark:border-emerald-900/20'
         : 'text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-slate-200 border border-transparent'
     }`;
 
@@ -79,7 +79,7 @@ export default function FarmerSidebar() {
       {/* Footer Profile */}
       <div className="p-4 border-t border-slate-200 dark:border-dark-border bg-slate-50/50 dark:bg-slate-800/10 flex flex-col gap-3">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-full bg-blue-100 dark:bg-blue-950 flex items-center justify-center text-blue-600 dark:text-blue-400 font-bold text-sm">
+          <div className="w-9 h-9 rounded-full bg-emerald-100 dark:bg-emerald-950 flex items-center justify-center text-emerald-600 dark:text-emerald-400 font-bold text-sm">
             {user.name ? user.name[0].toUpperCase() : 'F'}
           </div>
           <div className="flex-1 min-w-0">

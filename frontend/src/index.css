@@ -6,21 +6,21 @@
 
 @layer base {
   :root {
-    --bg-main: #f8fafc;
-    --bg-surface: #ffffff;
-    --text-primary: #0f172a;
-    --text-secondary: #475569;
-    --brand-primary: #0066cc;
-    --border-color: #e2e8f0;
+    --bg-main: #FAF9F6;
+    --bg-surface: rgba(255, 255, 255, 0.88);
+    --text-primary: #0D2419;
+    --text-secondary: #4A5850;
+    --brand-primary: #059669;
+    --border-color: rgba(225, 235, 230, 0.5);
   }
 
   .dark {
-    --bg-main: #0b0f19;
-    --bg-surface: #151b2c;
-    --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
-    --brand-primary: #3b82f6;
-    --border-color: #2d3748;
+    --bg-main: #0B120F;
+    --bg-surface: rgba(20, 31, 26, 0.75);
+    --text-primary: #F2F6F4;
+    --text-secondary: #92A49B;
+    --brand-primary: #10b981;
+    --border-color: rgba(36, 51, 43, 0.7);
   }
 
   body {
@@ -57,7 +57,7 @@
 
 /* Smooth keyboard focus rings */
 input:focus, select:focus, textarea:focus, button:focus-visible {
-  @apply outline-none ring-2 ring-blue-500/50 border-blue-500;
+  @apply outline-none ring-2 ring-emerald-500/50 border-emerald-500;
 }
 
 /* Hide number input spinners for cleaner input fields */
@@ -173,4 +173,23 @@ input[type="number"] {
 
 .dark tbody tr:hover {
   background-color: #1e293b !important;
+}
+
+/* Card overrides for premium light glass/crystal effect */
+.border-slate-200.bg-white,
+.border-slate-150.bg-white,
+.border-slate-100.bg-white,
+.border-slate-205.bg-white {
+  background-color: rgba(255, 255, 255, 0.88) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-color: rgba(120, 219, 169, 0.45) !important;
+  box-shadow: 0 4px 20px -2px rgba(10, 40, 25, 0.05), 0 2px 8px -1px rgba(10, 40, 25, 0.03) !important;
+}
+
+.dark .dark\:bg-dark-surface {
+  background-color: rgba(20, 31, 26, 0.75) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-color: rgba(36, 51, 43, 0.75) !important;
 }

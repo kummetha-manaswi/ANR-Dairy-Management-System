@@ -82,7 +82,7 @@ export default function AdminDashboard() {
       {/* Welcome Title */}
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 border-b border-slate-100 dark:border-dark-border pb-4 select-none">
         <div className="flex flex-col gap-1">
-          <span className="text-xs font-bold text-blue-500 uppercase tracking-wider">
+          <span className="text-xs font-bold text-emerald-600 dark:text-emerald-450 uppercase tracking-wider">
             ANR Dairy SaaS ERP Portal
           </span>
           <h1 className="text-2xl font-black tracking-tight text-slate-800 dark:text-slate-100">
@@ -90,7 +90,7 @@ export default function AdminDashboard() {
           </h1>
         </div>
         <div className="flex items-center gap-2 text-xs bg-slate-100 dark:bg-slate-800/40 border border-slate-200 dark:border-dark-border px-3.5 py-1.5 rounded-lg text-slate-500">
-          <Database className="w-3.5 h-3.5 text-blue-500" />
+          <Database className="w-3.5 h-3.5 text-emerald-600" />
           <span>Last Auto-Backup: </span>
           <span className="font-bold text-slate-800 dark:text-slate-200">
             {formatDate(stats.lastBackupTime)} {formatTime(stats.lastBackupTime)}
@@ -102,10 +102,10 @@ export default function AdminDashboard() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         
         {/* Card 1: Today's Intake */}
-        <div className="border border-slate-200 dark:border-dark-border rounded-lg bg-white dark:bg-dark-surface p-5 flex flex-col justify-between shadow-sm select-none">
+        <div className="border border-slate-205 dark:border-dark-border rounded-lg bg-white dark:bg-dark-surface p-5 flex flex-col justify-between shadow-sm select-none">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Today's Intake</span>
-            <div className="w-8 h-8 rounded-full bg-blue-50 dark:bg-blue-950/20 flex items-center justify-center text-blue-600">
+            <div className="w-8 h-8 rounded-full bg-emerald-50 dark:bg-emerald-950/20 flex items-center justify-center text-emerald-600">
               <Droplet className="w-4 h-4" />
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function AdminDashboard() {
                 <span>Morning: {stats.todayCollections.morning.toFixed(1)}L</span>
               </span>
               <span className="flex items-center gap-1">
-                <Moon className="w-3 h-3 text-blue-400" />
+                <Moon className="w-3 h-3 text-teal-500" />
                 <span>Evening: {stats.todayCollections.evening.toFixed(1)}L</span>
               </span>
             </div>
@@ -146,10 +146,10 @@ export default function AdminDashboard() {
         </div>
 
         {/* Card 3: Farmers Directory */}
-        <div className="border border-slate-200 dark:border-dark-border rounded-lg bg-white dark:bg-dark-surface p-5 flex flex-col justify-between shadow-sm select-none">
+        <div className="border border-slate-205 dark:border-dark-border rounded-lg bg-white dark:bg-dark-surface p-5 flex flex-col justify-between shadow-sm select-none">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">Registered Farmers</span>
-            <div className="w-8 h-8 rounded-full bg-indigo-50 dark:bg-indigo-950/20 flex items-center justify-center text-indigo-600">
+            <div className="w-8 h-8 rounded-full bg-emerald-50 dark:bg-emerald-950/20 flex items-center justify-center text-emerald-600">
               <Users className="w-4 h-4" />
             </div>
           </div>
@@ -198,7 +198,7 @@ export default function AdminDashboard() {
                 to="/admin/billing/generate"
                 className="flex items-center gap-3 p-3 rounded-md border border-slate-100 dark:border-dark-border bg-slate-50/50 dark:bg-slate-800/10 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-350 font-medium text-xs transition"
               >
-                <PlusCircle className="w-4 h-4 text-blue-500" />
+                <PlusCircle className="w-4 h-4 text-emerald-650 dark:text-emerald-450" />
                 <span>Compile Invoicing Run</span>
               </Link>
               <Link
@@ -235,7 +235,7 @@ export default function AdminDashboard() {
           {/* Today's Payments Summary */}
           <div className="border border-slate-200 dark:border-dark-border rounded-lg bg-white dark:bg-dark-surface p-6 space-y-3.5 shadow-sm select-none">
             <h3 className="text-xs font-bold text-slate-400 uppercase tracking-wider border-b border-slate-100 dark:border-dark-border pb-2 flex items-center gap-1.5">
-              <ShieldCheck className="w-4.5 h-4.5 text-blue-500" />
+              <ShieldCheck className="w-4.5 h-4.5 text-emerald-600 dark:text-emerald-450" />
               <span>Today's Payments Activity</span>
             </h3>
             <div className="grid grid-cols-2 gap-4 text-center">
@@ -260,7 +260,7 @@ export default function AdminDashboard() {
               <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200">
                 Recent Milk Intake Logs
               </h3>
-              <Link to="/admin/collections" className="text-xs text-blue-500 hover:underline flex items-center gap-1 font-semibold">
+              <Link to="/admin/collections" className="text-xs text-emerald-600 dark:text-emerald-450 hover:underline flex items-center gap-1 font-semibold">
                 <span>View Ledger</span>
                 <ArrowRight className="w-3 h-3" />
               </Link>
@@ -305,7 +305,7 @@ export default function AdminDashboard() {
               <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-200">
                 Recent Payout Transactions
               </h3>
-              <Link to="/admin/payments" className="text-xs text-blue-500 hover:underline flex items-center gap-1 font-semibold">
+              <Link to="/admin/payments" className="text-xs text-emerald-600 dark:text-emerald-450 hover:underline flex items-center gap-1 font-semibold">
                 <span>View Ledger</span>
                 <ArrowRight className="w-3 h-3" />
               </Link>
