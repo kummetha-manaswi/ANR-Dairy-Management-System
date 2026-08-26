@@ -8,6 +8,16 @@ The system is designed around the operational requirements of **ANR Dairy, a dai
 
 ---
 
+## 🌐 Live Application
+
+**Frontend:** https://anr-dairy-management-system.vercel.app/
+
+**Backend API:** https://anr-dairy-management-system.onrender.com/
+
+**API Health Check:** https://anr-dairy-management-system.onrender.com/health
+
+---
+
 ## 📌 Project Overview
 
 The ANR Dairy Management System replaces fragmented manual dairy record management with a centralized digital platform.
@@ -261,35 +271,43 @@ This project is built using the **MERN stack**.
 - MongoDB Database Tools
 - VS Code
 
+### Deployment
+
+- **Frontend:** Vercel
+- **Backend:** Render
+- **Database:** MongoDB Atlas
+
 ---
 
 ## 🏗️ System Architecture
 
 ```text
                     ANR Dairy Management System
+
                               │
              ┌────────────────┼────────────────┐
              │                │                │
            Admin           Employee          Farmer
-           Portal            Portal           Portal
+           Portal           Portal           Portal
              │                │                │
              └────────────────┼────────────────┘
                               │
                               ▼
                        React Frontend
                               │
-                              ▼
-                         REST APIs
+                         Vercel Hosting
                               │
                               ▼
-                     Node.js + Express
+                          REST APIs
                               │
                               ▼
-                       MongoDB Database
-```
-
----
-
+                      Node.js + Express
+                              │
+                         Render Hosting
+                              │
+                              ▼
+                       MongoDB Atlas
+                          Database
 ## 🔄 Core Application Workflow
 
 ```text
@@ -342,6 +360,7 @@ ANR-Dairy-Management-System/
 │   └── vite.config.js
 │
 ├── docs/
+│   ├── screenshots/
 │   ├── ADMINISTRATOR_MANUAL.md
 │   ├── API_DOCUMENTATION.md
 │   ├── DEPLOYMENT_GUIDE.md
@@ -360,8 +379,7 @@ ANR-Dairy-Management-System/
 
 | Role | Main Responsibilities |
 |---|---|
-| **Admin** | Manage farmers, employees, collections, rates, billing, invoices, payments, reports, notifications, backups, and system settings |
-| **Employee** | Record daily milk collections and manage operational collection activities |
+| **Admin** | Manage farmers, collections, rates, billing, invoices, payments, reports, notifications, backups, and system settings |
 | **Farmer** | View milk collections, passbook, payments, profile, and notifications |
 
 ---
@@ -447,6 +465,8 @@ Additional environment variables may be required for external communication serv
 
 ## 🖼️ Application Screenshots
 
+The following screenshots demonstrate the main workflows and user interfaces of the ANR Dairy Management System.
+
 ### 🏠 Landing Page
 
 ![ANR Dairy Landing Page](docs/screenshots/landing-page.png)
@@ -479,40 +499,83 @@ Additional environment variables may be required for external communication serv
 
 ## 🚀 Deployment
 
-The project is being prepared for production deployment.
+The application has been successfully deployed and is running in production.
 
-Planned production architecture:
+### Production Architecture
 
 ```text
-                    GitHub Repository
-                           │
-                           ▼
-                    Frontend Hosting
-                           │
-                           ▼
-                    Backend API Hosting
-                           │
-                           ▼
-                     MongoDB Atlas
+                         GitHub Repository
+                                │
+                    ┌───────────┴───────────┐
+                    │                       │
+                    ▼                       ▼
+                 Vercel                  Render
+              Frontend Hosting        Backend Hosting
+                    │                       │
+                    │                       ▼
+                    │                 REST API
+                    │                       │
+                    └───────────┬───────────┘
+                                │
+                                ▼
+                          MongoDB Atlas
+                            Database
 ```
 
-Production credentials and environment variables will be configured separately from the source code.
+### Deployment Services
+
+| Component | Platform |
+|---|---|
+| Frontend | Vercel |
+| Backend | Render |
+| Database | MongoDB Atlas |
+| Source Code | GitHub |
+
+### Live URLs
+
+**Frontend:**  
+https://anr-dairy-management-system.vercel.app/
+
+**Backend:**  
+https://anr-dairy-management-system.onrender.com/
+
+**API Health Check:**  
+https://anr-dairy-management-system.onrender.com/health
+
+Production credentials and environment variables are configured separately from the source code.
+
+---
+
+## 🔒 Security & Data Protection
+
+- Authentication is protected using JWT.
+- Role-based access controls restrict user functionality.
+- Protected API routes prevent unauthorized access.
+- Authentication endpoints use rate limiting.
+- HTTP security headers are enabled.
+- Sensitive credentials are stored using environment variables.
+- Local database backups are excluded from version control.
+- Production database credentials are not stored in the repository.
+- Database backup and restore functionality is available through the backend.
+
+> ⚠️ Production secrets and database credentials must never be committed to GitHub.
 
 ---
 
 ## 🔮 Future Enhancements
 
-- Cloud deployment
-- MongoDB Atlas production database
-- Automated cloud backups
-- Enhanced analytics
+Although the core application is deployed and operational, future improvements may include:
+
+- Enhanced analytics and visualization
 - Advanced dairy reporting
-- Real-time notifications
-- Production SMS integration
+- More real-time notification capabilities
+- Expanded SMS integration
 - Additional farmer communication channels
 - Improved mobile responsiveness
 - Performance optimization
 - Additional localization support
+- Automated cloud backup improvements
+- Additional operational dashboards
 
 ---
 
@@ -529,26 +592,50 @@ This project demonstrates practical experience with:
 - Role-based authorization
 - Business logic implementation
 - Dairy management workflows
-- Billing and payment systems
+- Milk collection management
+- Rate calculation and management
+- Billing and invoice systems
+- Payment management
 - Database backup and recovery
 - Responsive frontend development
 - Multilingual application support
 - Git and GitHub
-- Production deployment preparation
+- Production deployment
+- Vercel frontend hosting
+- Render backend hosting
+- MongoDB Atlas database hosting
 
 ---
 
 ## 📌 Project Status
 
-**Active Development & Deployment Preparation**
+### 🟢 Production Deployed & Operational
 
-The core application modules have been implemented, frontend production build verification has been completed, and the project is being prepared for production deployment.
+The ANR Dairy Management System has been successfully deployed with:
+
+- ✅ React + Vite frontend
+- ✅ Node.js + Express backend
+- ✅ MongoDB Atlas production database
+- ✅ JWT authentication
+- ✅ Role-based access control
+- ✅ Farmer management
+- ✅ Milk collection
+- ✅ Rate management
+- ✅ Billing and invoices
+- ✅ Payment management
+- ✅ Notifications
+- ✅ Reports and analytics
+- ✅ Backup and recovery
+- ✅ GitHub source control
+- ✅ Vercel frontend deployment
+- ✅ Render backend deployment
+- ✅ Production API health check
 
 ---
 
 ## 👩‍💻 Developer
 
-### Manaswi Kummetha
+### Kummetha Manaswi
 
 Full-stack developer and developer of the ANR Dairy Management System.
 
@@ -556,4 +643,4 @@ Full-stack developer and developer of the ANR Dairy Management System.
 
 ## 📄 License
 
-This project is maintained as a personal/academic software project.
+This project is maintained as a personal/academic software project developed for ANR Dairy.
