@@ -10,11 +10,13 @@ The system is designed around the operational requirements of **ANR Dairy, a dai
 
 ## 🌐 Live Application
 
-**Frontend:** https://anr-dairy-management-system.vercel.app/
+## 🌐 Live Application
 
-**Backend API:** https://anr-dairy-management-system.onrender.com/
+🚀 **[Open Live Frontend](https://anr-dairy-management-system.vercel.app/)**
 
-**API Health Check:** https://anr-dairy-management-system.onrender.com/health
+🔧 **[Backend API](https://anr-dairy-management-system.onrender.com/)**
+
+❤️ **[API Health Check](https://anr-dairy-management-system.onrender.com/health)**
 
 ---
 
