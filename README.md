@@ -533,16 +533,6 @@ The application has been successfully deployed and is running in production.
 | Database | MongoDB Atlas |
 | Source Code | GitHub |
 
-### Live URLs
-
-**Frontend:**  
-https://anr-dairy-management-system.vercel.app/
-
-**Backend:**  
-https://anr-dairy-management-system.onrender.com/
-
-**API Health Check:**  
-https://anr-dairy-management-system.onrender.com/health
 
 Production credentials and environment variables are configured separately from the source code.
 
