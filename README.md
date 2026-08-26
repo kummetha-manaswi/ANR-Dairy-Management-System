@@ -1,50 +1,559 @@
-# ANR Dairy Management System (v1.0.0)
+# 🥛 ANR Dairy Management System
 
-A premium, production-ready, SaaS-enabled Enterprise Resource Planning (ERP) platform for milk dairies. Designed specifically for Indian milk dairies to manage daily collection logistics, automate complex tiered pricing, generate cyclic invoices, process payments, and engage farmers via instant WhatsApp notifications.
+> A full-stack **MERN-stack dairy management platform** developed for ANR Dairy to digitize and streamline daily dairy operations.
 
----
+ANR Dairy Management System centralizes farmer management, milk collection, rate calculation, billing, payments, invoicing, notifications, reporting, and operational management into a single web application.
 
-## 🚀 Key Modules & Capabilities
-
-1. **Farmer Directory**: Manage complete profiles, preferred milk types (Cow/Buffalo), bank details, and toggle active status.
-2. **Dynamic Rates Engine**: Supports formula-based calculations or matrix lookups (FAT & SNF) to calculate fair rates per liter instantly.
-3. **Milk Collection**: Dual daily shift collections (Morning & Evening) with automated validation ranges for FAT and SNF.
-4. **Automated Billing**: Cyclic billing periods (10-day, monthly, weekly) with automated invoices, bonus options, and deductions logs.
-5. **WhatsApp Communication**: Broadcast daily summaries, bill alerts, and payment receipts automatically using provider integrations.
-6. **Administrative Console**: Role-based access control, security logs audit, data backup archiving, and restorations.
-7. **Progressive Web App (PWA)**: Support for offline caching and installation onto mobile devices.
+The system is designed around the operational requirements of **ANR Dairy, a dairy business with 25 years of experience**, with dedicated workflows for administrators, employees, and farmers.
 
 ---
 
-## 🛠 Tech Stack
+## 📌 Project Overview
 
-- **Frontend**: React (Vite), React Router v6, Tailwind CSS, Lucide icons, Framer Motion, i18next (bilingual EN/TE support).
-- **Backend**: Node.js, Express, Helmet, Express Rate Limit, Morgan, JWT, PDFKit, ExcelJS.
-- **Database**: MongoDB (Mongoose ODM).
+The ANR Dairy Management System replaces fragmented manual dairy record management with a centralized digital platform.
+
+The application provides dedicated workflows for:
+
+- 👨‍💼 **Administrators**
+- 👷 **Employees**
+- 👨‍🌾 **Farmers**
+
+The platform helps manage farmer records, daily milk collections, configurable rate charts, billing periods, invoices, payments, notifications, reports, and system operations from one centralized application.
 
 ---
 
-## 📂 Project Architecture
+## ✨ Key Features
+
+### 👨‍💼 Admin Portal
+
+- Admin dashboard
+- Farmer registration and management
+- Farmer details and passbook
+- Employee and user management
+- Milk collection management
+- Rate chart creation and management
+- Rate chart history
+- Rate chart deletion
+- Billing management
+- Invoice generation and management
+- Payment tracking
+- Reports and analytics
+- Communication center
+- Notification management
+- System settings
+- Security settings
+- Backup and restore management
+
+### 👷 Employee Portal
+
+- Employee authentication
+- Employee dashboard
+- Farmer selection
+- Daily milk collection entry
+- Collection management
+- Shift history
+- Operational collection workflows
+
+### 👨‍🌾 Farmer Portal
+
+- Secure farmer authentication
+- Farmer dashboard
+- First-time login support
+- Password management
+- Farmer profile
+- Milk collection history
+- Farmer passbook
+- Payment information
+- Notifications
+
+---
+
+## 🥛 Milk Collection Management
+
+The system provides a structured workflow for recording and managing daily milk collections.
+
+### Features
+
+- Farmer-wise milk collection
+- Daily collection records
+- Morning and evening collection support
+- Cow and buffalo milk management
+- Milk quantity recording
+- Collection history
+- SNF-based pricing
+- Collection records linked to individual farmers
+- Collection reporting
+- Printable collection reports
+
+---
+
+## 💰 Rate Chart Management
+
+The rate management module allows administrators to configure and maintain dairy pricing.
+
+### Features
+
+- Create rate charts
+- View rate charts
+- Edit rate charts
+- Activate and deactivate rate charts
+- Effective-date based pricing
+- Rate chart history
+- Delete old rate charts
+- SNF-based pricing
+- Configurable milk rates
+- SNF values starting from **8.0**
+
+---
+
+## 🧾 Billing & Invoice Management
+
+The billing module helps streamline farmer payment calculations and invoice management.
+
+### Features
+
+- Custom billing periods
+- Farmer-wise billing
+- Milk collection-based billing
+- Invoice generation
+- Invoice details
+- Invoice history
+- Printable invoices
+- Payment tracking
+- Farmer passbook
+- Payment history
+
+---
+
+## 💳 Payment Management
+
+The payment module provides centralized tracking of farmer payments.
+
+- Payment records
+- Farmer-wise payment history
+- Payment status tracking
+- Payment details
+- Passbook integration
+- Payment reports
+- Printable payment records
+
+---
+
+## 🔔 Notifications & Communication
+
+The communication module provides centralized notification functionality.
+
+### Features
+
+- Notification templates
+- Notification logs
+- Farmer notifications
+- Communication center
+- SMS service integration
+- WhatsApp service integration
+- Notification history
+
+---
+
+## 📊 Reports & Analytics
+
+The system provides operational visibility through reporting and analytics.
+
+### Reports include
+
+- Milk collection reports
+- Farmer reports
+- Payment reports
+- Billing reports
+- Invoice information
+- Monthly reports
+- Passbook reports
+- Operational analytics
+- Printable reports
+
+---
+
+## 🔐 Authentication & Security
+
+Security is implemented across the frontend and backend.
+
+### Security features
+
+- JWT-based authentication
+- Role-based access control
+- Protected API routes
+- Authentication middleware
+- Session management
+- Password validation
+- Password change workflows
+- Access control
+- Security settings
+- Session timeout handling
+- Error handling
+- Unauthorized-access handling
+
+Sensitive configuration is managed through environment variables and excluded from version control.
+
+---
+
+## 💾 Backup & Recovery
+
+The backend includes backup and recovery functionality to help protect application data.
+
+### Features
+
+- Manual backup support
+- Scheduled backup support
+- Backup logs
+- Restore management
+- Database integrity checking
+- Backup history
+
+Local database backup files are intentionally excluded from the GitHub repository.
+
+---
+
+## 🌐 Multilingual Support
+
+The frontend includes localization support for:
+
+- 🇬🇧 English
+- 🇮🇳 Telugu
+
+The localization structure allows additional languages to be added in the future.
+
+---
+
+## 🛠️ Technology Stack
+
+This project is built using the **MERN stack**.
+
+### MERN Stack
+
+| Technology | Purpose |
+|---|---|
+| **MongoDB** | NoSQL database for application data |
+| **Express.js** | Backend web framework and REST API layer |
+| **React** | Frontend user interface |
+| **Node.js** | Backend JavaScript runtime |
+
+### Frontend
+
+- React
+- Vite
+- JavaScript
+- Tailwind CSS
+- Axios
+- i18n / localization
+
+### Backend
+
+- Node.js
+- Express.js
+- Mongoose
+- JWT Authentication
+- REST APIs
+
+### Development Tools
+
+- Git
+- GitHub
+- MongoDB Database Tools
+- VS Code
+
+---
+
+## 🏗️ System Architecture
 
 ```text
-Milk Management System/
-├── backend/
-│   ├── config/          # Database & configuration loaders
-│   ├── controllers/     # API request-response handlers
-│   ├── middleware/      # JWT, role verification, and security shields
-│   ├── models/          # Mongoose collection schemas
-│   ├── routes/          # Express route definitions
-│   ├── services/        # Auto-backup scheduler daemon
-│   └── server.js        # Backend HTTP API entry point
-└── frontend/
-    ├── public/          # PWA manifests, icons, service workers
-    └── src/
-        ├── components/  # Reusable UI controls, Sidebar, Header
-        ├── context/     # Global state context (UI, Toast)
-        ├── locales/     # English & Telugu translation catalogs
-        ├── pages/       # Dashboard and administration UI pages
-        ├── services/    # Client API transaction hooks
-        └── main.jsx     # Frontend entry point
+                    ANR Dairy Management System
+                              │
+             ┌────────────────┼────────────────┐
+             │                │                │
+           Admin           Employee          Farmer
+           Portal            Portal           Portal
+             │                │                │
+             └────────────────┼────────────────┘
+                              │
+                              ▼
+                       React Frontend
+                              │
+                              ▼
+                         REST APIs
+                              │
+                              ▼
+                     Node.js + Express
+                              │
+                              ▼
+                       MongoDB Database
 ```
 
-For complete implementation instructions, manuals, REST specs, and system architectures, please refer to the files located inside the [`docs/`](./docs/) directory.
+---
+
+## 🔄 Core Application Workflow
+
+```text
+Farmer Registration
+        ↓
+Milk Collection
+        ↓
+Rate Chart Calculation
+        ↓
+Billing Period
+        ↓
+Invoice Generation
+        ↓
+Payment Processing
+        ↓
+Farmer Passbook
+        ↓
+Reports & Analytics
+```
+
+---
+
+## 📁 Project Structure
+
+```text
+ANR-Dairy-Management-System/
+│
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   ├── utils/
+│   ├── .env.example
+│   ├── package.json
+│   └── server.js
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── locales/
+│   │   ├── pages/
+│   │   └── services/
+│   ├── package.json
+│   └── vite.config.js
+│
+├── docs/
+│   ├── ADMINISTRATOR_MANUAL.md
+│   ├── API_DOCUMENTATION.md
+│   ├── DEPLOYMENT_GUIDE.md
+│   ├── INSTALLATION_GUIDE.md
+│   ├── SYSTEM_DIAGRAMS.md
+│   └── USER_MANUAL.md
+│
+├── .gitignore
+├── README.md
+└── ...
+```
+
+---
+
+## 👥 User Roles
+
+| Role | Main Responsibilities |
+|---|---|
+| **Admin** | Manage farmers, employees, collections, rates, billing, invoices, payments, reports, notifications, backups, and system settings |
+| **Employee** | Record daily milk collections and manage operational collection activities |
+| **Farmer** | View milk collections, passbook, payments, profile, and notifications |
+
+---
+
+## 📚 Documentation
+
+Detailed documentation is available in the `docs/` directory.
+
+| Document | Description |
+|---|---|
+| `ADMINISTRATOR_MANUAL.md` | Administrator functionality and workflows |
+| `API_DOCUMENTATION.md` | Backend REST API documentation |
+| `DEPLOYMENT_GUIDE.md` | Deployment instructions |
+| `INSTALLATION_GUIDE.md` | Local installation instructions |
+| `SYSTEM_DIAGRAMS.md` | System architecture and diagrams |
+| `USER_MANUAL.md` | Application usage guide |
+
+---
+
+## ⚙️ Local Development
+
+### Prerequisites
+
+- Node.js
+- npm
+- MongoDB
+- Git
+
+### Clone the repository
+
+```bash
+git clone https://github.com/kummetha-manaswi/ANR-Dairy-Management-System.git
+cd ANR-Dairy-Management-System
+```
+
+### Backend
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+### Frontend
+
+Open another terminal:
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The Vite development server will display the local frontend URL in the terminal.
+
+---
+
+## 🔑 Environment Variables
+
+Create a `.env` file inside the `backend` directory.
+
+Use:
+
+```text
+backend/.env.example
+```
+
+as the configuration template.
+
+Example:
+
+```env
+MONGO_URI=
+JWT_SECRET=
+PORT=
+```
+
+Additional environment variables may be required for external communication services.
+
+> ⚠️ Never commit real database credentials, passwords, JWT secrets, API keys, SMS credentials, or other sensitive information to GitHub.
+
+---
+
+## 🖼️ Application Screenshots
+
+### 🏠 Landing Page
+
+![ANR Dairy Landing Page](docs/screenshots/landing-page.png)
+
+### 📊 Admin Dashboard
+
+![ANR Dairy Admin Dashboard](docs/screenshots/admin-dashboard.png)
+
+### 👨‍🌾 Farmer Management
+
+![ANR Dairy Farmer Management](docs/screenshots/farmer-management.png)
+
+### 💰 Rate Chart Management
+
+![ANR Dairy Rate Chart Management](docs/screenshots/rate-chart.png)
+
+### 🥛 Milk Collection
+
+![ANR Dairy Milk Collection](docs/screenshots/milk-collection.png)
+
+### 🧾 Billing & Invoices
+
+![ANR Dairy Billing and Invoices](docs/screenshots/billing-invoices.png)
+
+### 📈 Reports & Analytics
+
+![ANR Dairy Reports and Analytics](docs/screenshots/analytics.png)
+
+---
+
+## 🚀 Deployment
+
+The project is being prepared for production deployment.
+
+Planned production architecture:
+
+```text
+                    GitHub Repository
+                           │
+                           ▼
+                    Frontend Hosting
+                           │
+                           ▼
+                    Backend API Hosting
+                           │
+                           ▼
+                     MongoDB Atlas
+```
+
+Production credentials and environment variables will be configured separately from the source code.
+
+---
+
+## 🔮 Future Enhancements
+
+- Cloud deployment
+- MongoDB Atlas production database
+- Automated cloud backups
+- Enhanced analytics
+- Advanced dairy reporting
+- Real-time notifications
+- Production SMS integration
+- Additional farmer communication channels
+- Improved mobile responsiveness
+- Performance optimization
+- Additional localization support
+
+---
+
+## 🎯 Project Highlights
+
+This project demonstrates practical experience with:
+
+- MERN stack development
+- React and Vite
+- Node.js and Express.js
+- MongoDB and Mongoose
+- REST API development
+- JWT authentication
+- Role-based authorization
+- Business logic implementation
+- Dairy management workflows
+- Billing and payment systems
+- Database backup and recovery
+- Responsive frontend development
+- Multilingual application support
+- Git and GitHub
+- Production deployment preparation
+
+---
+
+## 📌 Project Status
+
+**Active Development & Deployment Preparation**
+
+The core application modules have been implemented, frontend production build verification has been completed, and the project is being prepared for production deployment.
+
+---
+
+## 👩‍💻 Developer
+
+### Manaswi Kummetha
+
+Full-stack developer and developer of the ANR Dairy Management System.
+
+---
+
+## 📄 License
+
+This project is maintained as a personal/academic software project.
