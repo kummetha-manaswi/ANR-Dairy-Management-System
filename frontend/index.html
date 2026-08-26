@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/logo192.png" />
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2563eb" />
+    <title>ANR Dairy Management System</title>
+    <script>
+      // Immediately apply theme class to html element before body mounts to prevent light/dark flashes
+      (function() {
+        const theme = localStorage.getItem('theme') || 'light';
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Premium Startup Loading Screen (Refinement 3) -->
+    <div id="loading-screen" style="position: fixed; inset: 0; background: #ffffff; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.4s ease; font-family: system-ui, -apple-system, sans-serif;">
+      <div style="width: 50px; height: 50px; border: 4px solid #e2e8f0; border-top-color: #2563eb; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+      <h2 style="color: #1e293b; font-size: 1.1rem; font-weight: 800; margin-top: 1.5rem; letter-spacing: -0.025em; text-transform: uppercase;">ANR Dairy System</h2>
+      <p style="color: #94a3b8; font-size: 0.75rem; font-weight: 600; margin-top: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">Loading resources...</p>
+      <style>
+        @keyframes spin { to { transform: rotate(360deg); } }
+      </style>
+    </div>
+
+    <script>
+      // Synchronously theme the loading screen based on active theme
+      if (localStorage.getItem('theme') === 'dark') {
+        const screen = document.getElementById('loading-screen');
+        if (screen) {
+          screen.style.background = '#0b0f19';
+          const h2 = screen.querySelector('h2');
+          if (h2) h2.style.color = '#f1f5f9';
+          const p = screen.querySelector('p');
+          if (p) p.style.color = '#64748b';
+        }
+      }
+    </script>
+
+    <div id="root"></div>
+
+    <script type="module" src="/src/main.jsx"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(reg => console.log('Service Worker registered successfully:', reg.scope))
+            .catch(err => console.error('Service Worker registration failed:', err));
+        });
+      }
+
+      // Fade out loading screen overlay once react rendering starts
+      window.addEventListener('DOMContentLoaded', () => {
+        setTimeout(() => {
+          const loader = document.getElementById('loading-screen');
+          if (loader) {
+            loader.style.opacity = '0';
+            setTimeout(() => loader.remove(), 400);
+          }
+        }, 300); // minor buffer to ensure React bootstrap mounts
+      });
+    </script>
+  </body>
+</html>
