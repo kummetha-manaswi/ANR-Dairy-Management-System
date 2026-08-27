@@ -497,6 +497,13 @@ The following screenshots demonstrate the main workflows and user interfaces of 
 
 ![ANR Dairy Reports and Analytics](docs/screenshots/analytics.png)
 
+### 👨‍🌾 Farmer Portal Dashboard
+
+![ANR Dairy Farmer Portal Dashboard](docs/screenshots/farmer-portal-dashboard.png)
+
+### 📖 Farmer Passbook
+
+![ANR Dairy Farmer Passbook](docs/screenshots/farmer-passbook.png)
 ---
 
 ## 🚀 Deployment
