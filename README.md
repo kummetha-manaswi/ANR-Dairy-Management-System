@@ -4,7 +4,7 @@
 
 ANR Dairy Management System centralizes farmer management, milk collection, rate calculation, billing, payments, invoicing, notifications, reporting, and operational management into a single web application.
 
-The system is designed around the operational requirements of **ANR Dairy, a dairy business with 25 years of experience**, with dedicated workflows for administrators, employees, and farmers.
+The system is designed around the operational requirements of **ANR Dairy, a dairy business with 25 years of experience**, with dedicated workflows for administrators and farmers.
 
 ---
 
@@ -27,7 +27,6 @@ The ANR Dairy Management System replaces fragmented manual dairy record manageme
 The application provides dedicated workflows for:
 
 - 👨‍💼 **Administrators**
-- 👷 **Employees**
 - 👨‍🌾 **Farmers**
 
 The platform helps manage farmer records, daily milk collections, configurable rate charts, billing periods, invoices, payments, notifications, reports, and system operations from one centralized application.
@@ -56,15 +55,6 @@ The platform helps manage farmer records, daily milk collections, configurable r
 - Security settings
 - Backup and restore management
 
-### 👷 Employee Portal
-
-- Employee authentication
-- Employee dashboard
-- Farmer selection
-- Daily milk collection entry
-- Collection management
-- Shift history
-- Operational collection workflows
 
 ### 👨‍🌾 Farmer Portal
 
@@ -284,32 +274,34 @@ This project is built using the **MERN stack**.
 ## 🏗️ System Architecture
 
 ```text
-                    ANR Dairy Management System
-
-                              │
-             ┌────────────────┼────────────────┐
-             │                │                │
-           Admin           Employee          Farmer
-           Portal           Portal           Portal
-             │                │                │
-             └────────────────┼────────────────┘
-                              │
-                              ▼
-                       React Frontend
-                              │
-                         Vercel Hosting
-                              │
-                              ▼
-                          REST APIs
-                              │
-                              ▼
-                      Node.js + Express
-                              │
-                         Render Hosting
-                              │
-                              ▼
-                       MongoDB Atlas
-                          Database
+                                  ┌───────────────────────┐
+              │ ANR Dairy Management  │
+              │       System          │
+              └───────────┬───────────┘
+                          │
+              ┌───────────┴───────────┐
+              │                       │
+           Admin                   Farmer
+           Portal                  Portal
+              │                       │
+              └───────────┬───────────┘
+                          │
+                          ▼
+                   React Frontend
+                          │
+                       Vercel
+                          │
+                          ▼
+                     REST APIs
+                          │
+                          ▼
+                  Node.js + Express
+                          │
+                       Render
+                          │
+                          ▼
+                   MongoDB Atlas
+                   
 ## 🔄 Core Application Workflow
 
 ```text
