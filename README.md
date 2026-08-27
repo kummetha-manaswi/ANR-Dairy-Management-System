@@ -274,34 +274,52 @@ This project is built using the **MERN stack**.
 ## 🏗️ System Architecture
 
 ```text
-                                  ┌───────────────────────┐
-              │ ANR Dairy Management  │
-              │       System          │
-              └───────────┬───────────┘
-                          │
-              ┌───────────┴───────────┐
-              │                       │
-           Admin                   Farmer
-           Portal                  Portal
-              │                       │
-              └───────────┬───────────┘
-                          │
-                          ▼
-                   React Frontend
-                          │
-                       Vercel
-                          │
-                          ▼
-                     REST APIs
-                          │
-                          ▼
-                  Node.js + Express
-                          │
-                       Render
-                          │
-                          ▼
-                   MongoDB Atlas
-                   
+ ANR Dairy Management System
+           |
+     +-----+-----+
+     |           |
+     v           v
++-----------+ +-------------+
+|   Admin   | |   Farmer    |
+|   Portal  | |   Portal    |
++-----+-----+ +------+------+
+      |              |
+      +------+-------+
+             |
+             v
+     +---------------+
+     | React Frontend |
+     +-------+-------+
+             |
+             v
+     +---------------+
+     |    Vercel     |
+     |    Hosting    |
+     +-------+-------+
+             |
+             v
+     +---------------+
+     |    REST API   |
+     +-------+-------+
+             |
+             v
+     +---------------+
+     | Node.js +     |
+     | Express       |
+     +-------+-------+
+             |
+             v
+     +---------------+
+     |    Render     |
+     |    Hosting    |
+     +-------+-------+
+             |
+             v
+     +---------------+
+     | MongoDB Atlas  |
+     |   Database    |
+     +---------------+      
+     
 ## 🔄 Core Application Workflow
 
 ```text
