@@ -654,6 +654,4 @@ Full-stack developer and developer of the ANR Dairy Management System.
 
 ---
 
-## 📄 License
-
 This project is licensed under the **MIT License**.
