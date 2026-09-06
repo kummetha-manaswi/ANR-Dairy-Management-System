@@ -10,8 +10,6 @@ The system is designed around the operational requirements of **ANR Dairy, a dai
 
 ## 🌐 Live Application
 
-## 🌐 Live Application
-
 🚀 **[Open Live Frontend](https://anr-dairy-management-system.vercel.app/)**
 
 🔧 **[Backend API](https://anr-dairy-management-system.onrender.com/)**
@@ -651,7 +649,5 @@ Full-stack developer and developer of the ANR Dairy Management System.
 ---
 
 ## 📄 License
-
----
 
 This project is licensed under the **MIT License**.
